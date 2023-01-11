@@ -1,3 +1,4 @@
+```
 # first_cmd out is input for second_cmd and second_cmd error is redirected to stderr.txt
 $echo bijayp | ./script.sh 2> stderr.txt
 $echo bijayp | ./script.sh 2> stderr.txt > stdout.txt
@@ -42,6 +43,6 @@ $ grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_in
 ## difference between two files
 $ diff file1 file2
 $ diff --color file1 file2
-
+```
 
 
