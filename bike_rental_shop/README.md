@@ -17,4 +17,9 @@ $ [[ 11 =~ ^[0-9]+$ ]]; echo $?
 
 $ [[ ! 11 =~ ^[0-9]+$ ]]; echo $?
 #output: 1 ( It means 11 is a number and ! signifies for not equal to pattern)
+
+$ echo ' M e ' | sed 's/^ //g' # to remove only first space in the input text
+$ echo '   M e ' | sed 's/^ *//g' # * is for removing all spaces in the front.
+$ echo '   M e   ' | sed 's/ *$//g' # $ is for end elements in text.
+$ echo "$(echo '   M e   ' | sed -E 's/^ *| *$//g')." # for replacing any number of patterns at beginning and end
 ```
