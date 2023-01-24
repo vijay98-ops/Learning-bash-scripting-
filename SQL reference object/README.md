@@ -10,6 +10,29 @@ $ git stash list # to view your stack
 $ git stash pop # bring back the changes
 $ git stash show # show condensed version of changes in the latest stash list
 $ git stash show -p # show full changes of the latest stash
+$ git stash show stash@{1} # older than stash@{0}
+$ git stash drop stash_name
+$ git show # to view the last commit
+$ git show HEAD~1 # to view previous commit
+
+#You can add the latest stash while keeping it in the list with git stash apply. Apply your stash with this method.
+$ git stash apply
+
+# when git rebase causes conflicts, solve the conflicts manually and then
+$ git status
+$ git add .
+$ git status
+$ git rebase --continue
+
+# undo changes or commits
+$ git reset HEAD~1
+$ git reset HEAD~1 --hard # the changes arenot added to the working tree
+$ git reset --soft # the changes are added to the working tree
+
+Reverting is a good way to undo a commit because you don't lose the commit from the history.
+$ git revert HEAD
+$ git rebase --interactive HEAD~2 # head2 means you have chance to change last two commits
+$ git rebase --interactive --root # goto your first commit
 ```
 
 ### When you create a branch (with being on some other branch at the time), then the created branch will be a clone of the current branch you are, at the time of creating the branch. This means, that your new branch will have similar codes and status as the current branch.
