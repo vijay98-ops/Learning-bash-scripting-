@@ -33,6 +33,16 @@ Reverting is a good way to undo a commit because you don't lose the commit from 
 $ git revert HEAD
 $ git rebase --interactive HEAD~2 # head2 means you have chance to change last two commits
 $ git rebase --interactive --root # goto your first commit
+
+# creating .gitignore
+$ git checkout -b feat/add-gitignore
+$ touch .env
+$ echo "SECRET=MY_SECRET" > .env
+$ touch .gitignore
+$ echo ".env" > .gitignore # the file .env is then ignored by the git
+$ touch sample.env # this will not be ignored by git and will notice about creating .env file for the repo.
+$ echo "SECRET=" > sample.env
+
 ```
 
 ### When you create a branch (with being on some other branch at the time), then the created branch will be a clone of the current branch you are, at the time of creating the branch. This means, that your new branch will have similar codes and status as the current branch.
